@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 1</title>
+  <style>
+  .input-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     width: 100%;
+     flex-direction: row;
+  }
+
+  .born {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  form {
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <form action="">
+    <h1>Free Registrasion</h1>
+    <div class="input-container">
+      <label for="nama">NAMA</label>
+      <div>
+        <input type="text" name="nama">
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="tgl-lahir">Tgl Lahir</label>
+      <div class="born">
+        <input style="width: 40px; margin: 0 5px;" type="text" name="tgl-lahir" id="hari"> <b>/</b>
+        <input style="width: 40px; margin: 0 5px;" type="text" name="tgl-lahir" id="bulan"> <b>/</b>
+        <input style="width: 40px; margin: 0 5px;" type="text" name="tgl-lahir" id="tahun">
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="kota">KOTA</label>
+      <div>
+        <input type="text" name="kota" id="kota">
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="pekerjaan">PEKERJAAN</label>
+      <div>
+        <select name="pekerjaan" id="pekerjaan">
+          <option value="Tani">Tani</option>
+        </select>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="jenis-kelamin">JENIS KELAMIN</label>
+      <div>
+        <input type="radio" name="jenis-kelamin" id="pria">Pria
+        <input type="radio" name="jenis-kelamin" id="wanita">Wanita
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="hobby">Hobby</label>
+      <div>
+        <input type="checkbox" name="hobby" value="Reading" id="reading">Reading
+        <input type="checkbox" name="hobby" value="Sport" id="sport">Sport
+        <input type="checkbox" name="hobby" value="Singing" id="singing">Singing
+        <input type="checkbox" name="hobby" value="Traveling" id="traveling">Traveling
+      </div>
+    </div>
+    <div class="input-containers">
+      <button>Kirim</button>
+      <button>Cancel</button>
+    </div>
+  </form>
+</body>
+</html>

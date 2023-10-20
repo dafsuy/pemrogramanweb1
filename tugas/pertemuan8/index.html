@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form HTML</title>
+  </head>
+  <body>
+    <form action="">
+      <h1>FORM PENDAFTARAN</h1>
+      <div>
+        <label for="nim">NIM</label>
+        <input type="text" name="nim" id="nim" />
+      </div>
+      <div>
+        <label for="nama">NAMA</label>
+        <input type="text" name="nama" id="nama" />
+      </div>
+      <div>
+        <label for="gender">JENIS KELAMIN</label>
+        <input type="radio" name="gender" value="Pria" id="pria" />Pria
+        <input type="radio" name="gender" value="Wanita" id="wanita" />Wanita
+      </div>
+      <div>
+        <label for="agama">AGAMA</label>
+        <select name="agama" id="agama">
+          <option value="Islam">Islam</option>
+          <option value="Katholik">Katholik</option>
+          <option value="Kristen">Kristen</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Budha">Budha</option>
+        </select>
+      </div>
+      <div>
+        <label for="status">STATUS</label>
+        <input type="radio" name="status" id="Kawin">Kawin
+        <input type="radio" name="status" id="Belum Kawin">Belum Kawin
+      </div>
+      <div>
+        <label for="jurusan">JURUSAN</label>
+        <select name="jurusan" id="jurusan">
+          <option value="Teknik Informatika" id="teknik-informatika">Teknik Informatika</option>
+          <option value="Manajemen Informatika" id="manajemen-informatika">Manajemen Informatika</option>
+          <option value="Teknik Komputer" id="teknik-komputer">Teknik Komputer</option>
+          <option value="Teknik Industri" id="teknik-industri">Teknik Industri</option>
+        </select>
+      </div>
+      <div>
+        <label for="hoby">HOBY</label>
+        <input type="checkbox" name="hoby" id="futsal" value="Futsal">Futsal
+        <input type="checkbox" name="hoby" id="renang" value="Renang">Renang
+        <input type="checkbox" name="hoby" id="traveling" value="Traveling">Traveling
+      </div>
+      <div>
+        <label for="keterangan">KETERANGAN</label>
+        <textarea type="text" name="keterangan" id="keterangan"></textarea>
+      </div>
+    </form>
+  </body>
+</html>
