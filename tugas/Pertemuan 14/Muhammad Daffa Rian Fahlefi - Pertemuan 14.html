@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trapesium</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .container {
+        padding: 1% 5%;
+      }
+
+      .input {
+        display: flex;
+        flex-direction: row;
+        width: 15rem;
+        justify-content: space-between;
+        margin-top: 5px;
+      }
+
+      .input-field {
+        width: 2rem;
+      }
+
+      .submit {
+        display: flex;
+        justify-content: end;
+        margin-top: 1rem;
+        transform: translateX(-15px);
+      }
+
+      .hasil {
+        width: 5rem;
+        height: 2rem;
+        border: 1px solid black;
+        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .hasil-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <h1>Menghitung Luas Trapesium</h1>
+        <p>Diketahui :</p>
+        <!-- Input -->
+        <form>
+          <div class="input">
+            <label for="garis-atas">Garis Atas</label>
+            <div>
+              <input
+                class="input-field"
+                type="text"
+                name="garis-atas"
+                id="garis-atas"
+                required
+              />
+              <span>cm</span>
+            </div>
+          </div>
+          <div class="input">
+            <label for="garis-bawah">Garis Bawah</label>
+            <div>
+              <input
+                class="input-field"
+                type="text"
+                name="garis-bawah"
+                id="garis-bawah"
+                required
+              />
+              <span>cm</span>
+            </div>
+          </div>
+          <div class="input">
+            <label for="tinggi">Tinggi</label>
+            <div>
+              <input
+                class="input-field"
+                type="text"
+                name="tinggi"
+                id="tinggi"
+                required
+              />
+              <span>cm</span>
+            </div>
+          </div>
+          <div class="input submit">
+            <button name="hitung" id="hitung">Hitung</button>
+          </div>
+        </form>
+        <!-- Output -->
+        <p>Maka :</p>
+        <div class="hasil-container">
+          <p>
+            Luas : (Garis Atas + Garis Bawah)/2 * Tinggi =
+            <span class="hasil" id="hasil">0</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const garisAtas = document.getElementById('garis-atas');
+    const garisBawah = document.getElementById('garis-bawah');
+    const tinggi = document.getElementById('tinggi');
+    const hasil = document.getElementById('hasil');
+    const hitung = document.getElementById('hitung');
+
+    function calculateArea() {
+      const atas = parseFloat(garisAtas.value);
+      const bawah = parseFloat(garisBawah.value);
+      const tinggii = parseFloat(tinggi.value);
+
+      if (isNaN(atas) || isNaN(bawah) || isNaN(tinggii)) {
+        alert('Harap masukkan angka yang valid untuk semua input.');
+        return;
+      }
+
+      const result = (atas + bawah / 2) * tinggii;
+      hasil.innerHTML = `${result}`;
+      console.log(result);
+    }
+
+    hitung.addEventListener('click', calculateArea);
+  </script>
+</html>
