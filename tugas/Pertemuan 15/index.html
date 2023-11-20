@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="input">
+          <label for="name">Nama</label><br />
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="input">
+          <label for="nim">Nim</label><br />
+          <input type="text" id="nim" name="nim" />
+        </div>
+        <div class="input">
+          <p>Jenis Kelamin</p>
+          <input type="radio" id="man" name="gender" value="Laki - Laki" />
+          <label for="man">Laki - Laki</label>
+          <input type="radio" id="women" name="gender" value="Perempuan" />
+          <label for="women">Perempuan</label>
+        </div>
+        <div class="input">
+          <button id="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let radios = document.getElementsByName('gender');
+        let gender;
+
+        for (let i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+            gender = radios[i].value;
+            console.log('Gender:', gender); // Tambahkan pernyataan log ini
+            break;
+          }
+        }
+        const submit = document.getElementById('submit');
+
+        // Tampil Data
+        const viewData = () => {
+          let name = document.getElementById('name').value;
+          let nim = document.getElementById('nim').value;
+          alert(
+            `Data Berhasil di submit ! \n Nama : ${name} \n Nim : ${nim}\n Jenis Kelamin : ${gender}`
+          );
+        };
+
+        // Validasi Pin
+        const isValidPin = () => {
+          const pin = 123456;
+          const inputPin = prompt('Masukan Pin Untuk Melanjutkan');
+          return inputPin == pin;
+        };
+
+        // Validasi lanjutkan
+        const next = () => {
+          return confirm('Apakah data sudah Benar ?');
+        };
+
+        // Validasi Jika form sudah terisi semua
+        const isValid = () => {
+          let name = document.getElementById('name').value;
+          let nim = document.getElementById('nim').value;
+
+          if (name !== '' && nim !== '' && gender !== '') {
+            if (isValidPin()) {
+              if (next()) {
+                viewData();
+              } else {
+                alert('Operasi Dibatalkan');
+              }
+            } else {
+              alert('Pin Salah');
+            }
+          } else {
+            alert('Isi semua Data !');
+          }
+          event.preventDefault(); // Jangan lupa preventDefault agar form tidak ter-submit secara otomatis
+        };
+
+        // Ketika tombol di klik
+        submit.addEventListener('click', function (event) {
+          isValid(event);
+        });
+      });
+    </script>
+  </body>
+</html>
