@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertemuan 17</title>
+    <style>
+      table {
+        border: 1px solid black;
+        margin: 5rem auto;
+      }
+
+      th {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Nilai Awal</th>
+        <td id="nilai-awal"></td>
+      </tr>
+      <tr>
+        <th>Nilai Akhir</th>
+        <td id="nilai-akhir"></td>
+      </tr>
+      <tr>
+        <th>Deret Yang Tampil</th>
+        <td id="deret"></td>
+      </tr>
+      <tr>
+        <th>Jumlah Deret Bilangan</th>
+        <td id="banyak-deret"></td>
+      </tr>
+      <tr>
+        <th>Jumlah Nilai Bilangan Tersebut</th>
+        <td id="jumlah-deret"></td>
+      </tr>
+    </table>
+    <script>
+      const nilaiAwal = prompt('Masukan Nilai Awal : ');
+      const nilaiAkhir = prompt('Masukan Nilai Akhir : ');
+
+      if (isNaN(nilaiAwal) || isNaN(nilaiAkhir)) {
+        alert("Masukan Angka Yang Valid");
+      }
+
+      let sequence = [];
+      let count = 0;
+      let sum = 0;
+
+      for(let i = nilaiAwal; i <= nilaiAkhir; i++){
+        if(i % 2 === 0 && i % 3 ===0){
+          sequence.push(i);
+          count++;
+          sum+=i;
+        }
+      }
+
+      const outputNilaiAwal = document.getElementById('nilai-awal');
+      const outputNilaiAkhir = document.getElementById('nilai-akhir');
+      const outputDeret = document.getElementById('deret');
+      const outputBanyakDerat = document.getElementById('banyak-deret');
+      const outputJumlahDerat = document.getElementById('jumlah-deret');
+
+      outputNilaiAwal.innerHTML = nilaiAwal;
+      outputNilaiAkhir.innerHTML = nilaiAkhir;
+      outputDeret.innerHTML = sequence;
+      outputBanyakDerat.innerHTML = count;
+      outputJumlahDerat.innerHTML = sum;
+
+
+    </script>
+  </body>
+</html>
