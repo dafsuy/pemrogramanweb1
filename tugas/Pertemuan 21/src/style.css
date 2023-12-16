@@ -1,0 +1,11 @@
+.jumbotron {
+    background-image: url(/tugas/pertemuan\ 21/src/img/bg.jpg);
+    height: 30rem;
+    background-attachment: local;
+    background-position: center;
+    filter: brightness(50%);
+}
+
+.profil {
+    width: 100px;
+}
